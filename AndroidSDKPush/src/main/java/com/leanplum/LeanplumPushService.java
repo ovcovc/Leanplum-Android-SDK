@@ -241,6 +241,7 @@ public class LeanplumPushService {
   }
 
   static void handleNotification(final Context context, final Bundle message) {
+    Log.d("Push RECEIVED with id: ", getMessageId(message));
     if (LeanplumActivityHelper.getCurrentActivity() != null
         && !LeanplumActivityHelper.isActivityPaused
         && (message.containsKey(Keys.PUSH_MESSAGE_ID_MUTE_WITH_ACTION)
@@ -287,7 +288,7 @@ public class LeanplumPushService {
     if (notificationManager == null) {
       return;
     }
-
+    Log.d("Push SHOWN with id: ", getMessageId(message));
     Intent intent = new Intent(context, LeanplumPushReceiver.class);
     intent.addCategory("lpAction");
     intent.putExtras(message);
@@ -402,6 +403,7 @@ public class LeanplumPushService {
 
   static void openNotification(Context context, Intent intent) {
     Log.d("Opening push notification action.");
+    Log.d("Push OPENED with id: ", getMessageId(intent.getExtras()));
     // Pre handles push notification.
     Bundle notification = preHandlePushNotification(context, intent);
     if (notification == null) {
