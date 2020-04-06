@@ -9,7 +9,7 @@ android {
     compileSdkVersion COMPILE_SDK_VERSION
     useLibrary 'org.apache.http.legacy'
 
-    publishNonDefault true
+    publishNonDefault false
 
     defaultConfig {
         minSdkVersion MIN_SDK_VERSION
