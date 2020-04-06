@@ -47,4 +47,4 @@ task generateJavadoc(type: Javadoc) {
     failOnError false
 }
 
-publishing_task(LEANPLUM_CORE_ARTIFACT_ID, 'AndroidSDKCore')
+//publishing_task(LEANPLUM_CORE_ARTIFACT_ID, 'AndroidSDKCore')
